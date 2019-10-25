@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Superheroes.Models.Hero>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.heroName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.altEgo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.primary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.secondary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.catchphrase)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.heroName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.altEgo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.primary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.secondary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.catchphrase)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
